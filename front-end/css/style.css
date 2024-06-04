@@ -1,14 +1,14 @@
 /* Styles globaux */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f0be86;
     margin: 0;
     padding: 0;
 }
 
 /* Header */
 .site-header {
-    background-color: #007bff;
+    background-color: #5d7052;
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -31,13 +31,25 @@ body {
 }
 
 /* Formulaire d'inscription et de connexion */
-.form-container {
-    width: 45%;
+
+.form-container1,
+.form-container2 {
+    width: 40%;
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px auto;
+}
+
+.form-container1 {
+    float: left;
+    text-align: center;
+}
+
+.form-container2 {
+    float: right;
+    text-align: center;
 }
 
 .form-container label {
@@ -48,6 +60,7 @@ body {
 .form-container input[type="text"],
 .form-container input[type="email"],
 .form-container input[type="password"] {
+    background-color: #007bff;
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -70,7 +83,7 @@ body {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #5d7052;
     color: #fff;
     text-align: center;
     padding: 10px 0;
