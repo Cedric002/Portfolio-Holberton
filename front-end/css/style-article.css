@@ -33,16 +33,61 @@ body {
 /* corps */
 
 h1 {
-    background-color: #c1a7ff;
     text-align: center;
     padding-bottom: 2%;
 }
 
-.list {
+.flex-list {
     background-color: #f0be86;
     max-width: 100%;
     height: auto;
-    padding-bottom: 40%;
+    padding-bottom: auto;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 50px;
+    text-align: center;
+}
+
+.place1 {
+    background-color: #383bf0;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
+}
+
+.place2 {
+    background-color: #00e900;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
+}
+
+.place3 {
+    background-color: #ff5454;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
+}
+
+.place4 {
+    background-color: #c3d102;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
+}
+
+.place5 {
+    background-color: #817c80;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
+}
+
+.place6 {
+    background-color: #0cb49e;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
 }
 
 /* Footer */
