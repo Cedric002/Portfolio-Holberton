@@ -33,24 +33,16 @@ body {
 /* corps */
 
 h1 {
+    background-color: #c1a7ff;
     text-align: center;
     padding-bottom: 2%;
 }
 
-.achat {
+.list {
     background-color: #f0be86;
-    float: left;
-    text-align: center;
-    width: 49%;
-    padding: 4% 0 4% 0;
-}
-
-.vente {
-    background-color: #f0be86;
-    float: right;
-    text-align: center;
-    width: 49%;
-    padding: 4% 0 4% 0;
+    max-width: 100%;
+    height: auto;
+    padding-bottom: 40%;
 }
 
 /* Footer */
@@ -58,8 +50,9 @@ footer {
     background-color: #5d7052;
     color: #fff;
     text-align: center;
+    margin: 10px 0;
     padding: 10px 0;
-    position: absolute;
+    position: static;
     bottom: 0;
     width: 100%;
 }
