@@ -93,6 +93,16 @@ h1 {
     border: solid black;
 }
 
+.sell {
+    background-color: #5d7052;
+    border-radius: 50px;
+    width: 15%;
+    margin: 10px auto;
+    text-align: center;
+    color: white;
+    font-size: 35px;
+}
+
 /* Footer */
 footer {
     background-color: #5d7052;
