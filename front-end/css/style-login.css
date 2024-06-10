@@ -38,7 +38,7 @@ body {
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 20px auto;
+    margin: 30px auto;
     float: left;
     text-align: center;
     flex-direction: column;
@@ -50,7 +50,7 @@ body {
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin: 20px auto;
+    margin: 30px auto;
     float: right;
     text-align: center;
 }
