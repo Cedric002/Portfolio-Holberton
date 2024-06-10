@@ -32,24 +32,33 @@ body {
 
 /* Formulaire d'inscription et de connexion */
 
-.form-container1,
-.form-container2 {
+.login {
     width: 40%;
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px auto;
-}
-
-.form-container1 {
     float: left;
     text-align: center;
+    flex-direction: column;
 }
 
-.form-container2 {
+.connexion {
+    width: 40%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px auto;
     float: right;
     text-align: center;
+}
+
+.field {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
 }
 
 .form-container label {

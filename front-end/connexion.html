@@ -27,16 +27,44 @@
     </header>
 
     <div class="container">
-        <!-- Formulaire d'inscription -->
-        <div class="form-container1">
+        <div class="login">
             <h2>Inscription</h2>
-            <!-- ... Votre formulaire d'inscription ici ... -->
+            <div class="field">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" placeholder="Entrez votre nom">
+            </div>
+            <div class="field">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom">
+            </div>
+            <div class="field">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email">
+            </div>
+            <div class="field">
+                <label for="motdepasse">Mot de passe :</label>
+                <input type="password" id="motdepasse" name="motdepasse" placeholder="Entrez votre mot de passe">
+            </div>
+            <button type="submit">S'inscrire</button>
+            </div>
         </div>
-
-        <!-- Formulaire de connexion -->
-        <div class="form-container2">
+        
+        <div class="connexion">
             <h2>Connexion</h2>
-            <!-- ... Votre formulaire de connexion ici ... -->
+            <div class="field">
+                <label for="email">Email :</label>
+                <input type="text" id="email" placeholder="Entrez votre email">
+            </div>
+            <div class="field">
+                <label for="motdepasse_connexion">Mot de passe :</label>
+                <input type="password" id="motdepasse_connexion" name="motdepasse_connexion" placeholder="Entrez votre mot de passe">
+            </div>
+            <!--Ajoutez d'autres champs ici (mot de passe oublié, etc.)-->
+            <button type="submit">Se connecter</button>
+            <p>ou</p>
+            <button type="button" onclick="connectWithGoogle()">
+                Se connecter avec Google
+            </button>
         </div>
     </div>
 
@@ -54,6 +82,13 @@
         </div>
         <p>© 2024 Trésorsdhier</p>
     </footer>
+
+    <script>
+        function connectWithGoogle() {
+            // Ajoutez ici la logique pour la connexion avec Google
+            alert("Connecté avec Google !");
+        }
+    </script>
 
 </body>
 
