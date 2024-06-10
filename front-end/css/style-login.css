@@ -61,43 +61,14 @@ body {
     margin-bottom: 20px;
 }
 
-.form-container label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-.form-container input[type="text"],
-.form-container input[type="email"],
-.form-container input[type="password"] {
-    background-color: #007bff;
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.form-container button {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.form-container button:hover {
-    background-color: #0056b3;
-}
-
 /* Footer */
 footer {
     background-color: #5d7052;
     color: #fff;
     text-align: center;
-    margin: 375px 0 auto;
-    padding: 25px 0;
-    position: static;
+    margin: 400px 0 auto;
+    padding: 20px 0;
+    position: absolute;
     width: 100%;
 }
 
