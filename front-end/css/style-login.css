@@ -32,16 +32,20 @@ body {
 
 /* Formulaire d'inscription et de connexion */
 
+.container{
+    padding: 20px auto;
+    margin: 30px auto;
+}
+
 .login {
     width: 40%;
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 20px 10px;
     margin: 30px auto;
     float: left;
     text-align: center;
-    flex-direction: column;
 }
 
 .connexion {
@@ -49,7 +53,7 @@ body {
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 20px 10px;
     margin: 30px auto;
     float: right;
     text-align: center;
