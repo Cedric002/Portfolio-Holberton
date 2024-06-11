@@ -48,49 +48,54 @@ h1 {
 .place1 {
     background-color: #ffffff;
     width: 50%;
-    padding: 80px 10px 80px 100px;
+    padding: 60px 10px 80px 100px;
     margin: 50px auto;
     border: solid black;
 }
 
-.place2 {
+#title {
     background-color: #ffffff;
-    width: 50%;
-    padding: 20px 90px 20px 10px;
-    margin: 10px auto;
+    width: 40%;
+    padding: 20px 10px 1px 10px;
+    margin: 10px 0 0 325px;
     border: solid black;
+    font-size: 20px;
 }
 
-.place3 {
+#description {
     background-color: #ffffff;
-    width: 50%;
-    padding: 20px 90px 20px 10px;
-    margin: 10px auto;
+    width: 40%;
+    padding: 20px 10px 1px 10px;
+    margin: 10px 0 0 325px;
     border: solid black;
+    font-size: 20px;
 }
 
-.place4 {
+#mark {
     background-color: #ffffff;
-    width: 50%;
-    padding: 20px 90px 20px 10px;
-    margin: 10px auto;
+    width: 40%;
+    padding: 20px 10px 1px 10px;
+    margin: 10px 0 0 325px;
     border: solid black;
+    font-size: 20px;
 }
 
-.place5 {
+#status {
     background-color: #ffffff;
-    width: 50%;
-    padding: 20px 90px 20px 10px;
-    margin: 10px auto;
+    width: 40%;
+    padding: 20px 10px 1px 10px;
+    margin: 10px 0 0 325px;
     border: solid black;
+    font-size: 20px;
 }
 
-.place6 {
+#price {
     background-color: #ffffff;
-    width: 50%;
-    padding: 20px 90px 20px 10px;
-    margin: 10px auto;
+    width: 40%;
+    padding: 20px 10px 1px 10px;
+    margin: 10px 0 0 325px;
     border: solid black;
+    font-size: 20px;
 }
 
 .sell {
