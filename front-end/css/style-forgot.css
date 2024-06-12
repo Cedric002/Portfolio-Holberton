@@ -45,7 +45,7 @@ body {
     border: 1px solid #ddd;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 30px 10px;
-    margin: 90px auto 0;
+    margin: 30px auto 0;
     text-align: center;
 }
 
@@ -60,10 +60,12 @@ footer {
     background-color: #5d7052;
     color: #fff;
     text-align: center;
-    margin: 65px auto;
-    padding: 20px 0;
-    position: absolute;
+    padding: 20px auto;
     width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .footer-icons {
