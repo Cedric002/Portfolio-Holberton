@@ -1,6 +1,14 @@
- //Fonction pour gérer la sélection du fichier
-function handleFileSelect(event) {
-    var files = event.target.files; // Récupère le fichier depuis l'input
-    // Ici, vous pouvez ajouter le code pour traiter le fichier sélectionné
-    console.log('Fichier sélectionné :', files[0].name);
-}
+const multer = require('multer');
+
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads/')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.fieldname + '-' + Date.now())
+  }
+});
+
+const upload = multer({ storage: storage });
+
+module.exports = upload;
