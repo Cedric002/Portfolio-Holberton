@@ -48,9 +48,8 @@ footer {
     background-color: #5d7052;
     color: #fff;
     text-align: center;
-    margin: 10px 0;
-    padding: 10px 0;
-    position: static;
+    position: absolute;
+    bottom: 0;
     width: 100%;
 }
 

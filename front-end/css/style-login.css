@@ -70,9 +70,10 @@ footer {
     background-color: #5d7052;
     color: #fff;
     text-align: center;
-    margin: 400px 0 auto;
-    padding: 20px 0;
     position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
     width: 100%;
 }
 
