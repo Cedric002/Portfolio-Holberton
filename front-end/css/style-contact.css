@@ -37,6 +37,10 @@ h1 {
     padding-bottom: 2%;
 }
 
+p {
+    font-size: 20px;
+}
+
 .tell {
     background-color: #f0be86;
     padding: 90px;
