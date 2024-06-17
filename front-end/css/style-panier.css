@@ -2,6 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
+    position: relative;
     margin: 0;
     padding: 0;
 }
@@ -37,13 +38,23 @@ h1 {
     padding-bottom: 2%;
 }
 
-p {
-    font-size: 20px;
+.details {
+    background-color: #f0be86;
+    max-width: 100%;
+    padding: 20px 0 20px 0;
+    font-size: 30px;
 }
 
-.tell {
-    background-color: #f0be86;
-    padding: 90px;
+.place1 {
+    background-color: #ffffff;
+    width: 50%;
+    padding: 60px 10px 80px 100px;
+    margin: 50px auto;
+    border: solid black;
+}
+
+.button {
+    margin-left: 40%;
 }
 
 /* Footer */
@@ -51,8 +62,9 @@ footer {
     background-color: #5d7052;
     color: #fff;
     text-align: center;
+    margin: 10px 0;
+    padding: 10px 0;
     position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
