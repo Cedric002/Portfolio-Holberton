@@ -44,44 +44,50 @@ h1 {
     padding-bottom: auto;
     display: flex;
     flex-wrap: wrap;
-    font-size: 30px;
+    font-size: 50px;
     text-align: center;
 }
 
 .place1 {
     background-color: #ffffff;
-    padding: 30px 80px 30px 80px;
-    margin: 50px 100px;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
 }
 
 .place2 {
     background-color: #ffffff;
-    padding: 30px 80px 30px 80px;
-    margin: 50px 100px;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
 }
 
 .place3 {
     background-color: #ffffff;
-    padding: 30px 80px 30px 80px;
-    margin: 50px 100px;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
 }
 
 .place4 {
     background-color: #ffffff;
-    padding: 30px 80px 30px 80px;
-    margin: 50px 100px;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
 }
 
 .place5 {
     background-color: #ffffff;
-    padding: 30px 80px 30px 80px;
-    margin: 50px 90px;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
 }
 
 .place6 {
     background-color: #ffffff;
-    padding: 30px 80px 30px 80px;
-    margin: 50px 80px;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
 }
 
 /* Footer */
