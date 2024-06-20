@@ -50,42 +50,47 @@ h1 {
 
 .place1 {
     background-color: #ffffff;
-    padding: 80px 10px 80px 10px;
+    padding: 10px;
     margin: 10px 10px;
     flex: 45%;
 }
 
 .place2 {
     background-color: #ffffff;
-    padding: 80px 10px 80px 10px;
+    padding: 10px;
     margin: 10px 10px;
     flex: 45%;
 }
 
 .place3 {
     background-color: #ffffff;
-    padding: 80px 10px 80px 10px;
+    padding: 10px;
     margin: 10px 10px;
     flex: 45%;
 }
 
+.bureau {
+    width: 60%;
+    height: 40%;
+}
+
 .place4 {
     background-color: #ffffff;
-    padding: 80px 10px 80px 10px;
+    padding: 10px;
     margin: 10px 10px;
     flex: 45%;
 }
 
 .place5 {
     background-color: #ffffff;
-    padding: 80px 10px 80px 10px;
+    padding: 10px;
     margin: 10px 10px;
     flex: 45%;
 }
 
 .place6 {
     background-color: #ffffff;
-    padding: 80px 10px 80px 10px;
+    padding: 10px;
     margin: 10px 10px;
     flex: 45%;
 }
