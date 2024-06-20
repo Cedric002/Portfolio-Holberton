@@ -67,3 +67,9 @@ footer {
     max-width: 24px;
     height: auto;
 }
+
+.mail, .numero {
+    text-decoration: none;
+    color: rgb(7, 110, 139);
+}
+
