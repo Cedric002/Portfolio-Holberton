@@ -106,3 +106,18 @@ footer {
     max-width: 24px;
     height: auto;
 }
+
+/* Cible n'importe quel élément <a> lorsque celui-ci est survolé */
+a {
+    text-decoration: none;
+    color: black;
+    /* Supprime le soulignement */
+}
+
+.surline:hover  {
+    text-decoration: underline;
+    /* Ajoute un soulignement au texte lors du survol */
+    background-color: gold;
+    text-decoration: none;
+    /* Change la couleur de fond lors du survol */
+}
