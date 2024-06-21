@@ -90,6 +90,12 @@ h1 {
     flex: 45%;
 }
 
+.button1, .button2{
+    background-color: #f0be86;
+    padding: 10px 0 10px 10px;
+    width: 100%;
+}
+
 /* Footer */
 footer {
     background-color: #5d7052;
