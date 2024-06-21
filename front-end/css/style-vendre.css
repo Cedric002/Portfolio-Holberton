@@ -109,6 +109,10 @@ h1 {
     font-size: 35px;
 }
 
+.button {
+    text-align: center;
+}
+
 /* Footer */
 footer {
     background-color: #5d7052;
