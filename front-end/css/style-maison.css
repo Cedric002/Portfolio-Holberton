@@ -53,6 +53,7 @@ h1 {
     padding: 10px;
     margin: 10px 10px;
     flex: 45%;
+    font-size: 40px;
 }
 
 .place2 {
@@ -60,6 +61,7 @@ h1 {
     padding: 10px;
     margin: 10px 10px;
     flex: 45%;
+    font-size: 40px;
 }
 
 .place3 {
@@ -67,6 +69,7 @@ h1 {
     padding: 10px;
     margin: 10px 10px;
     flex: 45%;
+    font-size: 40px;
 }
 
 .bureau {
@@ -79,6 +82,7 @@ h1 {
     padding: 10px;
     margin: 10px 10px;
     flex: 45%;
+    font-size: 40px;
 }
 
 .place5 {
@@ -86,6 +90,7 @@ h1 {
     padding: 10px;
     margin: 10px 10px;
     flex: 45%;
+    font-size: 40px;
 }
 
 .place6 {
@@ -93,11 +98,12 @@ h1 {
     padding: 10px;
     margin: 10px 10px;
     flex: 45%;
+    font-size: 40px;
 }
 
 .button1, .button2 {
     background-color: #f0be86;
-    padding: 10px 0 10px 10px;
+    padding: 10px 0 10px 0;
     width: 100%;
 }
 
