@@ -1,0 +1,23 @@
+{
+  "name": "vide_grenier_api",
+  "version": "1.0.0",
+  "description": "API for Vide Grenier en Ligne project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Votre Nom",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.10.2",
+    "netstat": "^0.0.2",
+    "stop": "^3.1.0"
+  }
+}
