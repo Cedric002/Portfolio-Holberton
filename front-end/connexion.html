@@ -9,7 +9,6 @@
 </head>
 
 <body>
-
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-container">
@@ -27,57 +26,48 @@
     </header>
 
     <div class="container">
-        <div class="login">
+        <!-- Section Inscription -->
+        <div class="inscription">
             <h2>Inscription</h2>
-            <div class="field">
-                <label for="nom">Nom :</label>
-                <input type="text" id="nom" placeholder="Entrez votre nom">
-            </div>
-            <div class="field">
-                <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom">
-            </div>
-            <div class="field">
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" placeholder="Entrez votre email">
-            </div>
-            <div class="field">
-                <label for="motdepasse">Mot de passe :</label>
-                <input type="password" id="motdepasse" name="motdepasse" placeholder="Entrez votre mot de passe">
-            </div>
-            <button type="submit">S'inscrire</button>
-            <p>ou</p>
-            <button type="button" onclick="connectWithGoogle()">
-                Se connecter avec Google
-            </button>
-
+            <form id="register-form">
+                <div class="field">
+                    <label for="register-nom">Nom :</label>
+                    <input type="text" id="register-nom" placeholder="Entrez votre nom" required>
+                </div>
+                <div class="field">
+                    <label for="register-prenom">Prénom :</label>
+                    <input type="text" id="register-prenom" placeholder="Entrez votre prénom" required>
+                </div>
+                <div class="field">
+                    <label for="register-email">Email :</label>
+                    <input type="email" id="register-email" placeholder="Entrez votre email" required>
+                </div>
+                <div class="field">
+                    <label for="register-password">Mot de passe :</label>
+                    <input type="password" id="register-password" placeholder="Entrez votre mot de passe" required>
+                </div>
+                <button type="submit">S'inscrire</button>
+            </form>
         </div>
-        
+
+        <!-- Section Connexion -->
         <div class="connexion">
             <h2>Connexion</h2>
-            <div class="field">
-                <label for="email">Email :</label>
-                <input type="text" id="email" placeholder="Entrez votre email">
-            </div>
-            <div class="field">
-                <label for="motdepasse_connexion">Mot de passe :</label>
-                <input type="password" id="motdepasse_connexion" name="motdepasse_connexion" placeholder="Entrez votre mot de passe">
-            </div>
-            <button type="submit">Se connecter</button>
+            <form id="login-form">
+                <div class="field">
+                    <label for="login-email">Email :</label>
+                    <input type="email" id="login-email" placeholder="Entrez votre email" required>
+                </div>
+                <div class="field">
+                    <label for="login-password">Mot de passe :</label>
+                    <input type="password" id="login-password" placeholder="Entrez votre mot de passe" required>
+                </div>
+                <button type="submit">Se connecter</button>
+            </form>
             <p>ou</p>
-            <a href="forgot.html">
-            <button type="submit">mot de passe oublié</button>
-            </a>
-
+            <a href="forgot.html">Mot de passe oublié</a>
         </div>
     </div>
-
-    <script>
-        function connectWithGoogle() {
-            // Ajoutez ici la logique pour la connexion avec Google
-            alert("Connecté avec Google !");
-        }
-    </script>
 
     <footer>
         <div class="footer-icons">
@@ -93,6 +83,11 @@
         </div>
         <p>© 2024 Trésorsdhier</p>
     </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/inscription.js"></script>
+
+    <script src="js/connexion.js"></script>
 
 </body>
 
