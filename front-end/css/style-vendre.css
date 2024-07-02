@@ -109,8 +109,20 @@ h1 {
     font-size: 35px;
 }
 
-.sell-button {
+button {
+    background-color: #5d7052;
+    color: white;
+    padding: 19px 10px;
     text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: block;
+    width: 10%;
+    font-size: 19px;
+    margin: 10px auto;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
 }
 
 /* Footer */

@@ -39,12 +39,12 @@ body {
     max-width: 800px;
     margin: 30px auto;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
 }
 
-.login, .connexion {
+.inscription,
+.connexion {
     width: calc(50% - 40px);
     background-color: #fff;
     border: 1px solid #ddd;
@@ -73,7 +73,8 @@ body {
 
 /* Boutons */
 button {
-    background-color: #5d7052; /* Vert */
+    background-color: #5d7052;
+    /* Vert */
     color: white;
     padding: 10px 15px;
     text-align: center;
@@ -88,7 +89,8 @@ button {
 }
 
 button.logout-button {
-    background-color: #f44336; /* Rouge */
+    background-color: #f44336;
+    /* Rouge */
 }
 
 /* Footer */
@@ -111,4 +113,3 @@ footer {
     max-width: 24px;
     height: auto;
 }
-
