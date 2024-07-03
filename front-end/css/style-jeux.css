@@ -96,6 +96,32 @@ h1 {
     font-size: 40px;
 }
 
+.place7 {
+    background-color: #ffffff;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
+    font-size: 40px;
+}
+
+.place8 {
+    background-color: #ffffff;
+    padding: 80px 10px 80px 10px;
+    margin: 10px 10px;
+    flex: 45%;
+    font-size: 40px;
+}
+
+.echecs {
+    width: 40%;
+    height: 40%;
+}
+
+.astral {
+    width: 40%;
+    height: 40%;
+}
+
 .button1, .button2 {
     background-color: #f0be86;
     padding: 10px 0 10px 0;

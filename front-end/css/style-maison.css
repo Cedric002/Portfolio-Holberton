@@ -72,11 +72,6 @@ h1 {
     font-size: 40px;
 }
 
-.bureau {
-    width: 60%;
-    height: 40%;
-}
-
 .place4 {
     background-color: #ffffff;
     padding: 10px;
@@ -99,6 +94,37 @@ h1 {
     margin: 10px 10px;
     flex: 45%;
     font-size: 40px;
+}
+
+.place7 {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px 10px;
+    flex: 45%;
+    font-size: 40px;
+}
+
+.place8 {
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px 10px;
+    flex: 45%;
+    font-size: 40px;
+}
+
+.bureau {
+    width: 60%;
+    height: 40%;
+}
+
+.table {
+    width: 40%;
+    height: 35%;
+}
+
+.tabouret {
+    width: 40%;
+    height: 35%;
 }
 
 .button1, .button2 {
