@@ -6,6 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-article.css">
     <title>Vide Grenier en Ligne</title>
+    <script defer src="js/categorie.js"></script>
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/publications.js"></script>
+    <script defer src="js/panier.js"></script>
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            const token = localStorage.getItem('token');
+
+            const userDetailsDiv = document.getElementById('userDetails');
+            const userEmailSpan = document.getElementById('userEmail');
+            const loginLink = document.getElementById('loginLink');
+            const logoutButton = document.getElementById('logoutButton');
+
+            if (user && token) {
+                userEmailSpan.textContent = `Bienvenue, ${user.prenom} ${user.nom} (${user.email})`;
+                userDetailsDiv.style.display = 'block';
+                loginLink.style.display = 'none';
+
+                logoutButton.addEventListener('click', () => {
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    window.location.href = 'connexion.html';
+                });
+            } else {
+                userDetailsDiv.style.display = 'none';
+                loginLink.style.display = 'block';
+                loginLink.textContent = 'Connexion';
+                loginLink.href = 'connexion.html';
+            }
+        });
+    </script>
 </head>
 
 <body>
@@ -13,15 +45,21 @@
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-container">
-                <a href="Accueil.html"> <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo"> </a>
+                <a href="Accueil.html">
+                    <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo">
+                </a>
+            </div>
+            <div id="userDetails" class="user-details" style="display: none;">
+                <span id="userEmail" class="nav-link"></span>
+                <a href="#" id="logoutButton" class="nav-link logout-button">Déconnexion</a>
             </div>
             <nav class="main-navigation">
+                <a href="Accueil.html" class="nav-link">Accueil</a>
                 <a href="Articles.html" class="nav-link">Articles</a>
                 <a href="Vendre.html" class="nav-link">Vendre</a>
                 <a href="Contact.html" class="nav-link">Contact</a>
-                <a href="Accueil.html" class="nav-link">Accueil</a>
-                <a href="panier.html" class="nav-link">Mon-panier</a>
-                <a href="connexion.html" class="nav-link">Connexion</a>
+                <a href="panier.html" class="nav-link">Mon Panier</a>
+                <a href="connexion.html" id="loginLink" class="nav-link">Connexion</a>
             </nav>
         </div>
     </header>
@@ -29,17 +67,24 @@
     <div class="container">
         <h1 class="site-header">Articles</h1>
         <div class="flex-list">
-            <a class="surline" href="objet.html"><div class="place1">Objets</div></a>
-            
-            <a href="Jeux.html"class="surline"><div class="place2">Jeux</div></a>
-            
-            <a href="scolaire.html" class="surline"><div class="place3">Scolaire</div></a>
-            
-            <a href="maison.html" class="surline"><div class="place4">Maison</div></a>
-            
-            <a href="accessoires.html" class="surline"><div class="place5">Accessoires</div></a>
-            
-            <a href="outils.html" class="surline"><div class="place6">Outils</div></a>
+            <a class="surline" href="Objets.html">
+                <div class="place1">Objets</div>
+            </a>
+            <a href="Jeux.html" class="surline">
+                <div class="place2">Jeux</div>
+            </a>
+            <a href="scolaire.html" class="surline">
+                <div class="place3">Scolaire</div>
+            </a>
+            <a href="maison.html" class="surline">
+                <div class="place4">Maison</div>
+            </a>
+            <a href="Accessoires.html" class="surline">
+                <div class="place5">Accessoires</div>
+            </a>
+            <a href="outils.html" class="surline">
+                <div class="place6">Outils</div>
+            </a>
         </div>
     </div>
 
@@ -61,3 +106,4 @@
 </body>
 
 </html>
+
