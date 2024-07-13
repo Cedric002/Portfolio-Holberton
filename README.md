@@ -25,6 +25,7 @@ Navigate to the project directory.
 
 - NodeJS
 - npm
+- Environment files
 
 ## Related project
 
