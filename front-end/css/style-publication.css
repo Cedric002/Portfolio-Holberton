@@ -1,0 +1,180 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Hauteur minimale de la vue à 100% */
+}
+
+/* Header */
+.site-header {
+    background-color: #5d7052;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.site-logo {
+    max-width: 100px;
+    height: auto;
+}
+
+/* Navigation principale */
+.main-navigation {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+}
+
+/* Container principal */
+.container {
+    flex: 1; /* Utilise tout l'espace disponible */
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0be86;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+/* Détails du formulaire */
+.details {
+    display: grid;
+    gap: 20px;
+    background-color: #fff; /* Fond blanc */
+    border: 2px solid #000; /* Bordure noire */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Chaque champ du formulaire */
+.details .place1,
+.details .place2,
+.details .place3,
+.details .place4,
+.details .place5,
+.details .place6 {
+    display: grid;
+    gap: 10px;
+}
+
+/* Label des champs */
+.details label {
+    font-size: 18px;
+}
+
+/* Input des champs */
+.details input[type="text"],
+.details select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Bouton Vendre */
+.sell {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: auto auto;
+}
+
+.sell-button {
+    background-color: #5d7052;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sell-button:hover {
+    background-color: #4CAF50;
+}
+
+/* Footer */
+footer {
+    background-color: #5d7052;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0; /* Collé en bas de la fenêtre */
+    width: 100%; /* Pleine largeur */
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.footer-icon {
+    max-width: 24px;
+    height: auto;
+}
+
+/* Responsive design pour les appareils mobiles */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .details {
+        padding: 15px;
+    }
+
+    .sell {
+        grid-template-columns: auto;
+    }
+
+    .footer-icons {
+        flex-wrap: wrap;
+    }
+}
+
+
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.container {
+    flex: 1;
+}
+
+footer {
+    margin-top: auto;
+}
