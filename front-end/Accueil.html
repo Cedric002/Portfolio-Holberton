@@ -1,62 +1,84 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-home.css">
     <title>Vide Grenier en Ligne</title>
 </head>
-
 <body>
-
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-container">
-                <a href="Accueil.html"> <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo"> </a>
+                <a href="Accueil.html">
+                    <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo">
+                </a>
             </div>
             <nav class="main-navigation">
                 <a href="Articles.html" class="nav-link">Articles</a>
                 <a href="Vendre.html" class="nav-link">Vendre</a>
                 <a href="Contact.html" class="nav-link">Contact</a>
                 <a href="Accueil.html" class="nav-link">Accueil</a>
-                <a href="panier.html" class="nav-link">Mon-panier</a>
-                <a href="connexion.html" class="nav-link">Connexion</a>
+                <a href="panier.html" class="nav-link">Mon Panier</a>
+                <a href="connexion.html" id="loginLink" class="nav-link">Connexion</a>
+                <div id="userDetails" class="user-details" style="display: none;">
+                    <span id="userEmail" class="nav-link"></span>
+                    <span id="userName" class="nav-link"></span>
+                    <a href="#" id="logoutButton" class="nav-link logout-button">Déconnexion</a>
+                </div>
             </nav>
         </div>
+        <script defer>
+            document.addEventListener('DOMContentLoaded', () => {
+                const user = JSON.parse(localStorage.getItem('user'));
+                const token = localStorage.getItem('token');
+        
+                const userDetailsDiv = document.getElementById('userDetails');
+                const userEmailSpan = document.getElementById('userEmail');
+                const loginLink = document.getElementById('loginLink');
+                const logoutButton = document.getElementById('logoutButton');
+        
+                if (user && token) {
+                    userEmailSpan.textContent = `Bienvenue, ${user.prenom} ${user.nom} (${user.email})`;
+                    userDetailsDiv.style.display = 'block';
+                    loginLink.style.display = 'none';
+        
+                    logoutButton.addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('user');
+                        window.location.href = 'connexion.html';
+                    });
+                } else {
+                    userDetailsDiv.style.display = 'none';
+                    loginLink.style.display = 'block';
+                    loginLink.textContent = 'Connexion';
+                    loginLink.href = 'connexion.html';
+                }
+            });
+        </script>
     </header>
-
     <div class="container">
         <h1 class="site-header">Bienvenue !</h1>
         <div class="achat">
-            <h2>Reliques délaissées,<br>
-                trésors convoités !
-            </h2>
+            <h2>Reliques délaissées,<br> trésors convoités !</h2>
             <p>
-                À la recherche d'un trésors inattendus ?<br>
+                À la recherche d'un trésor inattendu ?<br>
                 Regardez notre collection et laissez-vous surprendre
                 par des découvertes étonnantes qui n'attendent que vous.
             </p>
-            <a href="Articles.html">
-            <p class="link-achat">Jetez-y un œil !</p>
-            </a>
+            <a href="Articles.html" class="link-achat">Jetez-y un œil !</a>
         </div>
         <div class="vente">
-            <h2>Les reliques des uns, font<br>
-                le trésor des autres !
-            </h2>
+            <h2>Les reliques des uns, font<br> le trésor des autres !</h2>
             <p>
                 Besoin de faire le tri ?<br>
                 Partagez vos propres trésors avec notre communauté,
                 en leur offrant une seconde chance d'être appréciés et
                 utiles.
             </p>
-            <a href="Vendre.html">
-            <p class="link-vente">Vendez l'encombrant !</p>
-            </a>
+            <a href="Vendre.html" class="link-vente">Vendez l'encombrant !</a>
         </div>
     </div>
-
     <footer>
         <div class="footer-icons">
             <a href="Accueil.html" class="footer-link">
@@ -71,7 +93,5 @@
         </div>
         <p>© 2024 Trésorsdhier</p>
     </footer>
-
 </body>
-
 </html>
