@@ -1,91 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style-vendre.css">
-    <title>Vide Grenier en Ligne</title>
-    <script src="js/main.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/uploade.js"></script>
-    <script src="js/appp.js"></script>
-    <script src="js/publication.js"> </script>
+    <title>Vide Grenier en Ligne - Vendre</title>
+    <link rel="stylesheet" href="/css/style-vendre.css">
+    <script src="js/auth.js" defer></script>
+    <script src="js/vendre.js" defer></script>
+    
 </head>
-
 <body>
-
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-container">
-            <a href="Accueil.html"> <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo">
+                <a href="Accueil.html">
+                    <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo">
+                </a>
             </div>
             <nav class="main-navigation">
                 <a href="Articles.html" class="nav-link">Articles</a>
                 <a href="Vendre.html" class="nav-link">Vendre</a>
                 <a href="Contact.html" class="nav-link">Contact</a>
                 <a href="Accueil.html" class="nav-link">Accueil</a>
-                <a href="panier.html" class="nav-link">Mon-panier</a>
-                <a href="connexion.html" class="nav-link">Connexion</a>
+                <a href="panier.html" class="nav-link">Mon Panier</a>
+                <a href="connexion.html" id="loginLink" class="nav-link">Connexion</a>
+                <div id="userDetails" class="user-details" style="display: none;">
+                    <span id="userEmail" class="nav-link"></span>
+                    <span id="userName" class="nav-link"></span>
+                    <a href="#" id="logoutButton" class="nav-link logout-button">Déconnexion</a>
+                </div>
             </nav>
         </div>
+        <script defer>
+            document.addEventListener('DOMContentLoaded', () => {
+                const user = JSON.parse(localStorage.getItem('user'));
+                const token = localStorage.getItem('token');
+        
+                const userDetailsDiv = document.getElementById('userDetails');
+                const userEmailSpan = document.getElementById('userEmail');
+                const loginLink = document.getElementById('loginLink');
+                const logoutButton = document.getElementById('logoutButton');
+        
+                if (user && token) {
+                    userEmailSpan.textContent = `Bienvenue, ${user.prenom} ${user.nom} (${user.email})`;
+                    userDetailsDiv.style.display = 'block';
+                    loginLink.style.display = 'none';
+        
+                    logoutButton.addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('user');
+                        window.location.href = 'connexion.html';
+                    });
+                } else {
+                    userDetailsDiv.style.display = 'none';
+                    loginLink.style.display = 'block';
+                    loginLink.textContent = 'Connexion';
+                    loginLink.href = 'connexion.html';
+                }
+            });
+        </script>
     </header>
-
     <div class="container">
         <h1 class="site-header">Vendre</h1>
         <div class="details">
-            <!-- Ajout d'un input de type file pour choisir une photo -->
             <div class="place1">
-                <label for="photo-upload" class="custom-file-upload">
-                    <b>+</b> Ajouter photo
-                </label>
-                <input id="photo-upload" type="file" style="display:none;" onchange="handleFileSelect(event)" />
+                <label for="photo-upload">Ajouter photo</label>
+                <input id="photo-upload" type="file" />
+                <div id="photo-container"></div>
             </div>
-            <div class="place2"><label for="title"></label>
+            <div class="place2">
+                <label for="title">Titre de l'article</label>
                 <input type="text" id="title" placeholder="Titre de l'article">
             </div>
-
-            <div class="place3"><label for="desciption"></label>
+            <div class="place3">
+                <label for="description">Description de l'article</label>
                 <input type="text" id="description" placeholder="Description de l'article">
             </div>
-
-            <div class="place4"><label for="mark"></label>
+            <div class="place4">
+                <label for="mark">Marque</label>
                 <input type="text" id="mark" placeholder="Marque">
             </div>
-
-            <div class="place5"><label for="status"></label>
-                <input type="text" id="status" placeholder="Etat">
+            <div class="place5">
+                <label for="status">État</label>
+                <input type="text" id="status" placeholder="État">
             </div>
-
-            <div class="place6"><label for="price"></label>
+            <div class="place6">
+                <label for="price">Prix</label>
                 <input type="text" id="price" placeholder="Prix">
             </div>
-
-            <form>
-                <button type="submit">Vendre</button>
-            </form>
+            <div class="sell">
+                <select id="category" class="select-category">
+                    <option value="objets">Objets</option>
+                    <option value="jeux">Jeux</option>
+                    <option value="scolaire">Scolaire</option>
+                    <option value="maison">Maison</option>
+                    <option value="accessoires">Accessoires</option>
+                    <option value="outils">Outils</option>
+                </select>
+                <button class="sell-button" id="sellButton">Vendre</button>
+            </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-icons">
-            <a href="Accueil.html" class="footer-link">
-                <img src="img/home.png" alt="Accueil" class="footer-icon">
-            </a>
-            <a href="connexion.html" class="footer-link">
-                <img src="img/inscription.png" alt="Inscription" class="footer-icon">
-            </a>
-            <a href="Contact.html" class="footer-link">
-                <img src="img/phone.png" alt="Contact" class="footer-icon">
-            </a>
-
+            <a href="Accueil.html" class="footer-link"><img src="img/home.png" alt="Accueil" class="footer-icon"></a>
+            <a href="connexion.html" class="footer-link"><img src="img/inscription.png" alt="Inscription" class="footer-icon"></a>
+            <a href="Contact.html" class="footer-link"><img src="img/phone.png" alt="Contact" class="footer-icon"></a>
         </div>
         <p>© 2024 Trésorsdhier</p>
     </footer>
-    <script></script>
-
-
 </body>
-
-
 </html>
