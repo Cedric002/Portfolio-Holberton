@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-login.css">
     <title>Vide Grenier en Ligne</title>
+    <script src="js/auth.js" defer></script>
 </head>
 <body>
     <header class="site-header">
@@ -18,9 +19,43 @@
                 <a href="Contact.html" class="nav-link">Contact</a>
                 <a href="Accueil.html" class="nav-link">Accueil</a>
                 <a href="panier.html" class="nav-link">Mon-panier</a>
-                <a href="connexion.html" class="nav-link">Connexion</a>
+                <a href="connexion.html" id="loginLink" class="nav-link">Connexion</a>
+                <div id="userDetails" style="display: none;">
+                    <span id="userEmail" class="nav-link"></span>
+                    <span id="userName" class="nav-link"></span>
+                    <a href="#" id="logoutButton" class="nav-link">Déconnexion</a>
+                </div>
             </nav>
         </div>
+        <script defer>
+            document.addEventListener('DOMContentLoaded', () => {
+                const user = JSON.parse(localStorage.getItem('user'));
+                const token = localStorage.getItem('token');
+        
+                const userDetailsDiv = document.getElementById('userDetails');
+                const userEmailSpan = document.getElementById('userEmail');
+                const loginLink = document.getElementById('loginLink');
+                const logoutButton = document.getElementById('logoutButton');
+        
+                if (user && token) {
+                    userEmailSpan.textContent = `Bienvenue, ${user.prenom} ${user.nom} (${user.email})`;
+                    userDetailsDiv.style.display = 'block';
+                    loginLink.style.display = 'none';
+        
+                    logoutButton.addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('user');
+                        window.location.href = 'connexion.html';
+                    });
+                } else {
+                    userDetailsDiv.style.display = 'none';
+                    loginLink.style.display = 'block';
+                    loginLink.textContent = 'Connexion';
+                    loginLink.href = 'connexion.html';
+                }
+            });
+        </script>
+        
     </header>
 
     <div class="container">
@@ -81,12 +116,5 @@
         </div>
         <p>© 2024 Trésorsdhier</p>
     </footer>
-
-    <script src="js/app.js"></script>
-  
-    <script src="js/inscription.js"></script>
-
-    <script src="js/connexion.js"></script>
-
 </body>
 </html>
