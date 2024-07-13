@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-panier.css">
     <title>Vide Grenier en Ligne</title>
+    <script src="js/auth.js" defer></script>
 </head>
-
 <body>
-
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-container">
-                <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo">
+                <a href="Accueil.html">
+                    <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo">
+                </a>
+            </div>
+            <div id="userDetails" class="user-details" style="display: none;">
+                <span id="userEmail" class="nav-link"></span>
+                <a href="#" id="logoutButton" class="nav-link logout-button">Déconnexion</a>
             </div>
             <nav class="main-navigation">
+                <a href="Accueil.html" class="nav-link">Accueil</a>
                 <a href="Articles.html" class="nav-link">Articles</a>
                 <a href="Vendre.html" class="nav-link">Vendre</a>
                 <a href="Contact.html" class="nav-link">Contact</a>
-                <a href="Accueil.html" class="nav-link">Accueil</a>
-                <a href="panier.html" class="nav-link">Mon-panier</a>
-                <a href="connexion.html" class="nav-link">Connexion</a>
+                <a href="panier.html" class="nav-link">Mon Panier</a>
+                <a href="connexion.html" id="loginLink" class="nav-link">Connexion</a>
             </nav>
         </div>
     </header>
 
-    <div class="container">
-        <h1 class="site-header">Mon Panier</h1>
+    <div id="cart-login" class="container">
         <div class="details">
+            <h1 class="site-header">Mon Panier</h1>
             <div class="place1">
-                <p>
-                    Connectez-vous pour enregistrer vos articles dans votre panier.
-                </p>
-                <a href="connexion.html">
-                <button class="button" type="submit">Se connecter</button>
-                </a>
+                <p>Connectez-vous pour enregistrer vos articles dans votre panier.</p>
+                <a href="connexion.html"><button class="button" type="submit">Se connecter</button></a>
             </div>
         </div>
+    </div>
+
+    <div id="cart-items-container" class="list-items"></div>
+
+    <div class="total-container">
+        <p id="total-amount">Montant total: 0 €</p>
+        <button class="pay-button">Procéder au paiement</button>
     </div>
 
     <footer>
@@ -51,14 +58,102 @@
             <a href="Contact.html" class="footer-link">
                 <img src="img/phone.png" alt="Contact" class="footer-icon">
             </a>
-
         </div>
         <p>© 2024 Trésorsdhier</p>
     </footer>
-    <script></script>
 
+    <script src="/js/panier.js" defer></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('user'));
+            const token = localStorage.getItem('token');
+    
+            const userDetailsDiv = document.getElementById('userDetails');
+            const userEmailSpan = document.getElementById('userEmail');
+            const loginLink = document.getElementById('loginLink');
+            const logoutButton = document.getElementById('logoutButton');
+    
+            if (user && token) {
+                userEmailSpan.textContent = `Bienvenue, ${user.prenom} ${user.nom} (${user.email})`;
+                userDetailsDiv.style.display = 'block';
+                loginLink.style.display = 'none';
+    
+                logoutButton.addEventListener('click', () => {
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user');
+                    window.location.href = 'connexion.html';
+                });
+
+                // Masquer la section de connexion au panier
+                const place1Div = document.querySelector('.place1');
+                place1Div.style.display = 'none';
+    
+                displayCartItems();
+
+            } else {
+                userDetailsDiv.style.display = 'none';
+                loginLink.style.display = 'block';
+                loginLink.textContent = 'Connexion';
+                loginLink.href = 'connexion.html';
+            }
+        });
+
+        function displayCartItems() {
+            const cartItemsContainer = document.getElementById('cart-items-container');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            cartItemsContainer.innerHTML = '';
+
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.classList.add('cart-item');
+
+                const itemPhoto = item.photoUrl ? `<img src="${item.photoUrl}" alt="${item.title}" class="cart-item-photo">` : '';
+
+                itemDiv.innerHTML = `
+                    ${itemPhoto}
+                    <div class="cart-item-info">
+                        <h2>${item.title}</h2>
+                        <p>Description: ${item.description}</p>
+                        <p>Marque: ${item.mark}</p>
+                        <p>État: ${item.status}</p>
+                        <p>Prix: ${item.price} €</p>
+                    </div>
+                    <div class="item-actions">
+                        <button class="delete-button" data-title="${item.title}">✕</button>
+                        <button class="buy-button">Acheter</button>
+                    </div>
+                `;
+
+                const deleteButton = itemDiv.querySelector('.delete-button');
+                deleteButton.addEventListener('click', () => {
+                    deleteItemFromCart(item.title);
+                    displayCartItems();
+                });
+
+                const buyButton = itemDiv.querySelector('.buy-button');
+                buyButton.addEventListener('click', () => {
+                    alert(`Merci pour votre achat de ${item.title} au prix de ${item.price} € !`);
+                });
+
+                cartItemsContainer.appendChild(itemDiv);
+            });
+
+            calculateTotal(cart);
+        }
+
+        function deleteItemFromCart(title) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.title !== title);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+
+        function calculateTotal(cart) {
+            const totalAmount = cart.reduce((total, item) => total + parseFloat(item.price), 0);
+            const totalAmountElement = document.getElementById('total-amount');
+            totalAmountElement.textContent = `Montant total: ${totalAmount.toFixed(2)} €`;
+        }
+    </script>
 </body>
-
-
 </html>
