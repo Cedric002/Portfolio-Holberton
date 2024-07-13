@@ -1,105 +1,73 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style-objet.css">
-    <title>Vide Grenier en Ligne</title>
+    <title>Objets - Vide Grenier en Ligne</title>
+    <link rel="stylesheet" href="/css/style-categorie.css">
+    <script src="js/categorie.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/publications.js" defer></script>
+    <script src="js/panier.js" defer></script>
+    
+
 </head>
-
 <body>
-
+   
     <header class="site-header">
         <div class="header-inner">
             <div class="logo-container">
-                <a href="Accueil.html"> <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo"> </a>
+                <a href="Accueil.html">
+                    <img src="img/logo.png" alt="Mon Vide Grenier Logo" class="site-logo">
+                </a>
             </div>
             <nav class="main-navigation">
                 <a href="Articles.html" class="nav-link">Articles</a>
                 <a href="Vendre.html" class="nav-link">Vendre</a>
                 <a href="Contact.html" class="nav-link">Contact</a>
                 <a href="Accueil.html" class="nav-link">Accueil</a>
-                <a href="panier.html" class="nav-link">Mon-panier</a>
-                <a href="connexion.html" class="nav-link">Connexion</a>
+                <a href="panier.html" class="nav-link">Mon Panier</a>
+                <a href="connexion.html" id="loginLink" class="nav-link">Connexion</a>
+                <div id="userDetails" class="user-details" style="display: none;">
+                    <span id="userEmail" class="nav-link"></span>
+                    <span id="userName" class="nav-link"></span>
+                    <a href="#" id="logoutButton" class="nav-link logout-button">Déconnexion</a>
+                </div>
             </nav>
         </div>
+        <script defer>
+            document.addEventListener('DOMContentLoaded', () => {
+                const user = JSON.parse(localStorage.getItem('user'));
+                const token = localStorage.getItem('token');
+        
+                const userDetailsDiv = document.getElementById('userDetails');
+                const userEmailSpan = document.getElementById('userEmail');
+                const loginLink = document.getElementById('loginLink');
+                const logoutButton = document.getElementById('logoutButton');
+        
+                if (user && token) {
+                    userEmailSpan.textContent = `Bienvenue, ${user.prenom} ${user.nom} (${user.email})`;
+                    userDetailsDiv.style.display = 'block';
+                    loginLink.style.display = 'none';
+        
+                    logoutButton.addEventListener('click', () => {
+                        localStorage.removeItem('token');
+                        localStorage.removeItem('user');
+                        window.location.href = 'connexion.html';
+                    });
+                } else {
+                    userDetailsDiv.style.display = 'none';
+                    loginLink.style.display = 'block';
+                    loginLink.textContent = 'Connexion';
+                    loginLink.href = 'connexion.html';
+                }
+            });
+        </script>
     </header>
-
+    
     <div class="container">
         <h1 class="site-header">Objets</h1>
-        <div class="flex-list">
-            <div class="place1">
-                <img src="img/articles/Objets/vase.jpg" alt="vase">
-                <p>Vase</p>
-                <p>Un vase pour la décoration ou la collection</p>
-                <p>Très bon état</p>
-                <p>120€</p>
-                <button type="submit">Ajouter au panier</button>
-            </div>
-            <div class="place2">
-                <img src="img/articles/Objets/tableau.jpg" alt="tableau">
-                <p>Tableau</p>
-                <p>Un tableau pour la décoration</p>
-                <p>Très bon état</p>
-                <p>110€</p>
-                <button type="submit">Ajouter au panier</button>
-            </div>
-            <div class="place3">
-                <img src="img/articles/Objets/statuette.jpg" alt="statuette">
-                <p>Statuette</p>
-                <p>Une petite statut pour la décoration ou la collection</p>
-                <p>Bon état</p>
-                <p>100€</p>
-                <button type="submit">Ajouter au panier</button>
-            </div>
-            <div class="place4">
-                <img src="img/articles/Objets/bougie.jpg" alt="bougie">
-                <p>Bougie</p>
-                <p>Une bougie encore utilisable pour illuminer votre soirée</p>
-                <p>Légèrement utilisé</p>
-                <p>4€</p>
-                <button type="submit">Ajouter au panier</button>
-            </div>
-            <div class="place5">
-                <img src="img/articles/Objets/assiette.jpg" alt="assiette">
-                <p>Assiette</p>
-                <p>En cas de besoin d'un en-cas</p>
-                <p>Bon état</p>
-                <p>11€</p>
-                <button type="submit">Ajouter au panier</button>
-            </div>
-            <div class="place6">
-                <img src="img/articles/Objets/couverts.jpg" alt="couverts">
-                <p>Couverts</p>
-                <p>Des couverts en argent pour dégustation de vos en-cas</p>
-                <p>Neuf</p>
-                <p>6€</p>
-                <button type="submit">Ajouter au panier</button>
-            </div>
-            <div class="place7">
-                <img src="img/articles/Objets/multiprise.jpg" alt="multiprise" class="multiprise">
-                <p>Multiprise</p>
-                <p>Rester brancher sur plusieurs fils</p>
-                <p>Neuf</p>
-                <p>5€</p>
-                <button type="submit">Ajouter au panier</button>
-            </div>
-            <div class="place8">
-                <img src="img/articles/Objets/verre.jpg" alt="verre" class="verre">
-                <p>Verre</p>
-                <p>Essayer de ne pas boire la tasse</p>
-                <p>Neuf</p>
-                <p>5€</p>
-                <button type="submit">Ajouter au panier</button>
-            </div>
-        </div>
-        <div class="button1">
-            <button type="submit">Ajouter</button>
-        </div>
-        <div class="button2">
-            <button type="submit">Supprimer</button>
-        </div>
+        <div id="publications-container"></div>
     </div>
 
     <footer>
@@ -116,7 +84,5 @@
         </div>
         <p>© 2024 Trésorsdhier</p>
     </footer>
-
 </body>
-
 </html>
